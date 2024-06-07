@@ -2,13 +2,29 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
-import data from '../data';
+import book1 from '../img/books/1.png'
+import book2 from '../img/books/2.png'
+import book3 from '../img/books/3.png'
+import book4 from '../img/books/4.png'
+import book5 from '../img/books/5.png'
+import book6 from '../img/books/6.png'
+import book7 from '../img/books/7.png'
+import book8 from '../img/books/8.png'
+import book9 from '../img/books/9.png'
+import book10 from '../img/books/10.png'
+import book11 from '../img/books/11.png'
+import book12 from '../img/books/12.png'
+import book13 from '../img/books/13.png'
+import book14 from '../img/books/14.png'
+import book15 from '../img/books/15.png'
+import book16 from '../img/books/16.png'
+import book17 from '../img/books/17.png'
+import book18 from '../img/books/18.png'
+
+
 
 export default function Library() {
-  const { id } = useParams();
-  const card = data.find(item => item.id === parseInt(id, 10));
 
-  if (!card) return <div>Loading...</div>;
 
   return (
     <div>
