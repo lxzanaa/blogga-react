@@ -21,23 +21,28 @@ import book16 from '../img/books/16.png';
 import book17 from '../img/books/17.png';
 import book18 from '../img/books/18.png';
 
-export default function Library() {
+const booksData = [
+  { year: 2020, books: [book1, book2, book3, book4] },
+  { year: 2019, books: [book5, book6, book7, book8] },
+  { year: 2018, books: [book9, book10, book11] },
+  { year: 2017, books: [book12, book13, book14, book15, book16, book17, book18] },
+];
 
+export default function Library() {
   return (
     <div>
       <Header />
 
-      <div className="max-w-[1420px] lg:rounded-b-xl  mx-auto bg-[#232E52]">
+      <div className="max-w-[1420px] lg:rounded-b-xl mx-auto bg-[#232E52]">
         <section className="pt-10 md:pt-[86.5px] pb-36">
           <div className="max-w-[970px] mx-auto px-5">
             <p className="text-white font-semibold text-base uppercase">👋 HELLO</p>
-            <h1 className="text-white font-bold md:text-[52px] text-4xl md:leading-[62.4px] mb-5">Insights about my personal and work
-              life,
-              and the
-              in-betweens</h1>
-            <p className="text-white/80 md:text-3xl text-xl">When products are made for you, you never realise how their design can
-              be exclusionary towards people
-              of color.</p>
+            <h1 className="text-white font-bold md:text-[52px] text-4xl md:leading-[62.4px] mb-5">
+              Insights about my personal and work life, and the in-betweens
+            </h1>
+            <p className="text-white/80 md:text-3xl text-xl">
+              When products are made for you, you never realise how their design can be exclusionary towards people of color.
+            </p>
           </div>
         </section>
       </div>
@@ -45,47 +50,18 @@ export default function Library() {
       <section className="pt-[100px] pb-10">
         <div className="max-w-[970px] px-5 mx-auto">
           <h2 className="text-[#232E52] font-bold text-4xl mb-5">Books I’ve read</h2>
-          <div className="mb-20">
-            <p className="text-[#232E52] font-semibold text-base mb-10">2020</p>
-            <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-3 md:gap-10 effect_container ">
-              <a className="hover_effect" href="#"><img className="max-w-[212px] w-full mx-auto" src={book1}   alt="book" /></a>
-              <a className="hover_effect" href="#"><img className="max-w-[212px] w-full mx-auto" src={book2}   alt="book" /></a>
-              <a className="hover_effect" href="#"><img className="max-w-[212px] w-full mx-auto" src={book3}   alt="book" /></a>
-              <a className="hover_effect" href="#"><img className="max-w-[212px] w-full mx-auto" src={book4}   alt="book" /></a>
+          {booksData.map((data, index) => (
+            <div className="mb-20" key={index}>
+              <p className="text-[#232E52] font-semibold text-base mb-10">{data.year}</p>
+              <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-3 md:gap-10 effect_container">
+                {data.books.map((book, idx) => (
+                  <a className="hover_effect" href="#" key={idx}>
+                    <img className="max-w-[212px] w-full mx-auto" src={book} alt="book" />
+                  </a>
+                ))}
+              </div>
             </div>
-          </div>
-          <div className="mb-20">
-            <p className="text-[#232E52] font-semibold text-base mb-10">2019</p>
-            <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-3 md:gap-10 effect_container ">
-              <a className="hover_effect" href="#"><img className="max-w-[212px] w-full mx-auto" src={book5}   alt="book" /></a>
-              <a className="hover_effect" href="#"><img className="max-w-[212px] w-full mx-auto" src={book6}   alt="book" /></a>
-              <a className="hover_effect" href="#"><img className="max-w-[212px] w-full mx-auto" src={book7}   alt="book" /></a>
-              <a className="hover_effect" href="#"><img className="max-w-[212px] w-full mx-auto" src={book8}   alt="book" /></a>
-            </div>
-          </div>
-
-          <div className="mb-20">
-            <p className="text-[#232E52] font-semibold text-base mb-10">2018</p>
-            <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-3 md:gap-10 effect_container ">
-              <a className="hover_effect" href="#"><img className="max-w-[212px] w-full mx-auto" src={book9}   alt="book" /></a>
-              <a className="hover_effect" href="#"><img className="max-w-[212px] w-full mx-auto" src={book10}    alt="book" /></a>
-              <a className="hover_effect" href="#"><img className="max-w-[212px] w-full mx-auto" src={book11}    alt="book" /></a>
-            </div>
-          </div>
-
-          <div className="mb-20">
-            <p className="text-[#232E52] font-semibold text-base mb-10">2017</p>
-            <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-3 md:gap-10 effect_container ">
-              <a className="hover_effect" href="#"><img className="max-w-[212px] w-full mx-auto" src={book12}    alt="book" /></a>
-              <a className="hover_effect" href="#"><img className="max-w-[212px] w-full mx-auto" src={book13}    alt="book" /></a>
-              <a className="hover_effect" href="#"><img className="max-w-[212px] w-full mx-auto" src={book14}    alt="book" /></a>
-              <a className="hover_effect" href="#"><img className="max-w-[212px] w-full mx-auto" src={book15}    alt="book" /></a>
-              <a className="hover_effect" href="#"><img className="max-w-[212px] w-full mx-auto" src={book16}    alt="book" /></a>
-              <a className="hover_effect" href="#"><img className="max-w-[212px] w-full mx-auto" src={book17}    alt="book" /></a>
-              <a className="hover_effect" href="#"><img className="max-w-[212px] w-full mx-auto" src={book18}    alt="book" /></a>
-            </div>
-          </div>
-
+          ))}
         </div>
       </section>
 
