@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.shadow_club {
+    box-shadow: 0px 4px 0px 0px #1D54C0 inset;
+}
+
+.hover_effect{
+    transition: opacity 0.6s ease;
+}
+.effect_container:hover > :not(:hover){
+    opacity: 0.5;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #221f1fdb;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
